@@ -71,19 +71,14 @@ class HomeController extends Controller
      */
     public function results(Request $request)
     {
-//        DB::enableQueryLog();
         $percentage_correct=0;
         $correct_answers=0;
         $name = $request->get('name');
         $questions_ids = $request->get('questions_ids');
-//var_dump(json_decode($questions_ids));
         $questions = Question::whereIn('id_question',json_decode($questions_ids))->get();
-//        $queries = DB::getQueryLog();
-//        var_dump($queries);
-//        exit();
-        $index=0;
+
         foreach ($questions as $question) {
-            $radio = $request->get('options' .$index);
+            $radio = $request->get('options' .$question->id_question);
             if (!$radio) {
 
                 Session::flash('error_message', trans('frontend.quiz.options.not.selected'));
@@ -97,7 +92,6 @@ class HomeController extends Controller
             }
             $question->selected_answer=$radio;
 
-            $index++;
         }
         $percentage_correct=($correct_answers/sizeof($questions))*100;
 

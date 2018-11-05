@@ -37,7 +37,7 @@
                                         <div class="row mar-top25">
                                             <div class="col-md-4 col-md-offset-4">
                                                 <label class="btn btn-block btn-primary">
-                                                    <input type="radio" name="options{{ $loop->parent->index }}"
+                                                    <input type="radio" name="options{{$question->id_question}}"
                                                            id="{{$answer->id_answer}}" class="radio-hidden"
                                                            value="{{$answer->id_answer}}">{{$answer->answer}}
                                                 </label>
