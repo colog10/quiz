@@ -52,7 +52,7 @@ class HomeController extends Controller
         if (!$name) {
             Session::flash('error_message', trans('frontend.home.name.missing'));
             return redirect()->back()->withInput();
-        } elseif ($category_id === "0") {
+        } elseif ($category_id === "0" || $category_id === 0) {
             Session::flash('error_message', trans('frontend.home.category.not.selected'));
             return redirect()->back()->withInput();
         }
