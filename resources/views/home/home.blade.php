@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="well">
 
-                    {!! Form::open(['url' => '/selectedTest', 'class' => 'form-horizontal','method' => 'get']) !!}
+                    {!! Form::open(['url' => '/selectedtest', 'class' => 'form-horizontal','method' => 'get']) !!}
                     {!! Form::hidden('selected_category', 0) !!}
 
 

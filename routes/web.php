@@ -13,4 +13,4 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::post('results', 'HomeController@results');
-Route::get('selectedTest', 'HomeController@selectedTest');
+Route::get('selectedtest', 'HomeController@selectedTest');
