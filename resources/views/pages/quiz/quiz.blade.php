@@ -9,12 +9,12 @@
 @stop
 
 @section('content')
-    @include('session_error.session_error')
 
     <section id="section-quiz" class="section pad-bot20 bg-white">
         <div class="container">
             <div class="row">
                 <div class="well">
+                    @include('session_error.session_error')
 
                     {!! Form::open(['url' => '/results', 'class' => 'form-horizontal']) !!}
                     {!! Form::hidden('name', $name) !!}

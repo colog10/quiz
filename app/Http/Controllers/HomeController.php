@@ -57,7 +57,7 @@ class HomeController extends Controller
             return redirect()->back()->withInput();
         }
 
-        $questions = Question::whereCategoryId($category_id)->orderByRaw('RAND()')->limit(2)->get();//change limit for more questions
+        $questions = Question::whereCategoryId($category_id)->orderByRaw('RAND()')->limit(1)->get();//change limit for more questions
         $questions_ids = $questions->pluck('id_question');
         return view('pages/quiz/quiz', compact('questions', 'name', 'questions_ids'));
     }
